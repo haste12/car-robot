@@ -749,30 +749,35 @@ SoftwareSerial voice(<span class="c-num">10</span>, <span class="c-num">11</span
           <model-viewer src="./car.glb" ios-src="./car.usdz" alt="Full Robot" auto-rotate auto-rotate-delay="600" rotation-per-second="18deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
           <div class="model3d-label"><span>Full Assembly</span></div>
           <div class="model3d-expand">&#x26F6; Expand</div>
+          <div class="model3d-tap"></div>
         </div>
 
         <div class="model3d-card" data-src="./frame.glb" data-label="Chassis">
           <model-viewer src="./frame.glb" alt="Chassis" auto-rotate auto-rotate-delay="800" rotation-per-second="22deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
           <div class="model3d-label"><span>Chassis</span></div>
           <div class="model3d-expand">&#x26F6; Expand</div>
+          <div class="model3d-tap"></div>
         </div>
 
         <div class="model3d-card" data-src="./frame.glb" data-label="Sensor Module">
           <model-viewer src="./frame.glb" alt="Sensor Module" auto-rotate auto-rotate-delay="1000" rotation-per-second="20deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
           <div class="model3d-label"><span>Sensor Module</span></div>
           <div class="model3d-expand">&#x26F6; Expand</div>
+          <div class="model3d-tap"></div>
         </div>
 
         <div class="model3d-card" data-src="./frame.glb" data-label="Motor Unit">
           <model-viewer src="./frame.glb" alt="Motor Unit" auto-rotate auto-rotate-delay="700" rotation-per-second="24deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
           <div class="model3d-label"><span>Motor Unit</span></div>
           <div class="model3d-expand">&#x26F6; Expand</div>
+          <div class="model3d-tap"></div>
         </div>
 
         <div class="model3d-card mc-large" data-src="./frame.glb" data-label="Circuit Board">
           <model-viewer src="./frame.glb" alt="Circuit Board" auto-rotate auto-rotate-delay="900" rotation-per-second="16deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
           <div class="model3d-label"><span>Circuit Board</span></div>
           <div class="model3d-expand">&#x26F6; Expand</div>
+          <div class="model3d-tap"></div>
         </div>
 
       </div>
@@ -822,13 +827,19 @@ SoftwareSerial voice(<span class="c-num">10</span>, <span class="c-num">11</span
     }
 
     document.querySelectorAll('.model3d-card').forEach(function(card) {
-      card.addEventListener('click', function(e) {
-        // Don't trigger if user is dragging the mini viewer
-        if (e.target.closest('model-viewer')) return;
+      // Use the tap overlay so touch events are never swallowed by model-viewer
+      var tap = card.querySelector('.model3d-tap');
+      function trigger() {
         var src   = card.getAttribute('data-src');
         var label = card.getAttribute('data-label') || '3D Model';
         openModal(src, label);
-      });
+      }
+      if (tap) {
+        tap.addEventListener('click', trigger);
+        tap.addEventListener('touchend', function(e){ e.preventDefault(); trigger(); }, { passive: false });
+      } else {
+        card.addEventListener('click', trigger);
+      }
     });
 
     backdrop.addEventListener('click', closeModal);

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Robot — Smart Autonomous Car Robot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ─────────────────────────── NAVBAR ─────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <span class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none"><rect x="4" y="14" width="28" height="14" rx="4" fill="#1e40af"/><rect x="10" y="8" width="16" height="8" rx="2" fill="#3b82f6"/><circle cx="10" cy="29" r="4" fill="#0f172a"/><circle cx="26" cy="29" r="4" fill="#0f172a"/><circle cx="10" cy="29" r="2" fill="#94a3b8"/><circle cx="26" cy="29" r="2" fill="#94a3b8"/><rect x="14" y="11" width="2" height="3" rx="1" fill="#fff" opacity=".6"/><rect x="20" y="11" width="2" height="3" rx="1" fill="#fff" opacity=".6"/><rect x="26" y="18" width="3" height="2" rx="1" fill="#93c5fd"/></svg>
+        </span>
+        Car Robot
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#model3d" class="nav-cta">3D Model</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─────────────────────────── HERO ─────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <span class="badge-dot"></span>
+          Computer Engineering · LFU
+        </span>
+        <h1 class="hero-title">
+          Smart Autonomous<br /><span class="gradient-text">Car Robot</span>
+        </h1>
+        <p class="hero-subtitle">
+          An intelligent robotic vehicle featuring obstacle avoidance, Bluetooth
+          control, line following, sound controller, and voice commands —
+          built with Arduino &amp; advanced sensors.
+        </p>
+        <div class="hero-actions">
+          <a href="#features" class="btn btn-primary">
+            <svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm1 11H9V9h2v4zm0-6H9V5h2v2z" fill="currentColor"/></svg>
+            Explore Features
+          </a>
+          <a href="#team" class="btn btn-outline">
+            <svg viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm5 8c0-2.2-3.6-4-8-4S2 11.8 2 14v1h16v-1z" fill="currentColor"/></svg>
+            Meet the Team
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Features</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">12+</span><span class="stat-label">Components</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Engineers</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">2026</span><span class="stat-label">Project Year</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="car-scene">
+          <div class="car-glow"></div>
+          <svg class="car-svg" viewBox="0 0 500 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow -->
+            <ellipse cx="250" cy="295" rx="130" ry="12" fill="#1e40af" opacity=".15"/>
+            <!-- Body -->
+            <rect x="80" y="160" width="340" height="100" rx="24" fill="url(#bodyGrad)"/>
+            <!-- Cabin -->
+            <rect x="130" y="90" width="220" height="80" rx="18" fill="url(#cabinGrad)"/>
+            <!-- Windshield front -->
+            <rect x="280" y="100" width="58" height="56" rx="8" fill="#bfdbfe" opacity=".9"/>
+            <!-- Windshield rear -->
+            <rect x="142" y="100" width="58" height="56" rx="8" fill="#bfdbfe" opacity=".7"/>
+            <!-- Headlights -->
+            <rect x="390" y="180" width="32" height="16" rx="8" fill="#fbbf24" opacity=".9"/>
+            <ellipse cx="406" cy="188" rx="14" ry="6" fill="#fef3c7" opacity=".7"/>
+            <!-- Taillights -->
+            <rect x="80" y="180" width="28" height="16" rx="8" fill="#ef4444" opacity=".8"/>
+            <!-- Wheels -->
+            <circle cx="150" cy="270" r="42" fill="#0f172a"/>
+            <circle cx="150" cy="270" r="28" fill="#1e293b"/>
+            <circle cx="150" cy="270" r="16" fill="#334155"/>
+            <circle cx="150" cy="270" r="6" fill="#94a3b8"/>
+            <circle cx="350" cy="270" r="42" fill="#0f172a"/>
+            <circle cx="350" cy="270" r="28" fill="#1e293b"/>
+            <circle cx="350" cy="270" r="16" fill="#334155"/>
+            <circle cx="350" cy="270" r="6" fill="#94a3b8"/>
+            <!-- Ultrasonic sensor front -->
+            <rect x="418" y="185" width="14" height="8" rx="2" fill="#93c5fd"/>
+            <rect x="418" y="197" width="14" height="8" rx="2" fill="#93c5fd"/>
+            <!-- Sensor waves -->
+            <path d="M435 189 Q445 192 435 196" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" class="sensor-wave w1"/>
+            <path d="M440 186 Q455 192 440 198" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" opacity=".6" class="sensor-wave w2"/>
+            <path d="M448 183 Q467 192 448 201" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" opacity=".3" class="sensor-wave w3"/>
+            <!-- Sound controller (microphone) on top of cabin -->
+            <rect x="228" y="74" width="30" height="20" rx="5" fill="#0f172a"/>
+            <rect x="233" y="68" width="20" height="10" rx="4" fill="#1e293b"/>
+            <!-- Mic grille lines -->
+            <line x1="236" y1="71" x2="236" y2="76" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="240" y1="69" x2="240" y2="77" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="244" y1="69" x2="244" y2="77" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="248" y1="71" x2="248" y2="76" stroke="#64748b" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Sound waves radiating from mic -->
+            <path d="M215 79 Q208 84 215 89" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" fill="none" class="sensor-wave w1"/>
+            <path d="M209 75 Q199 84 209 93" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".6" class="sensor-wave w2"/>
+            <path d="M203 71 Q190 84 203 97" stroke="#a78bfa" stroke-width="1" stroke-linecap="round" fill="none" opacity=".3" class="sensor-wave w3"/>
+            <!-- Antenna -->
+            <line x1="310" y1="90" x2="310" y2="55" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="310" cy="52" r="5" fill="#3b82f6"/>
+            <circle cx="310" cy="52" r="3" fill="#bfdbfe" class="antenna-blink"/>
+            <!-- Track line for line-following (black stripe on ground) -->
+            <rect x="170" y="304" width="180" height="8" rx="4" fill="#1e293b" opacity=".7"/>
+            <!-- IR line-following sensors (bottom front of car, pointing down) -->
+            <rect x="228" y="256" width="14" height="10" rx="3" fill="#f59e0b"/>
+            <rect x="258" y="256" width="14" height="10" rx="3" fill="#f59e0b"/>
+            <!-- IR sensor beams pointing to track -->
+            <line x1="235" y1="266" x2="228" y2="304" stroke="#fde68a" stroke-width="1.5" stroke-dasharray="4 3" opacity=".8" class="sensor-wave w1"/>
+            <line x1="265" y1="266" x2="270" y2="304" stroke="#fde68a" stroke-width="1.5" stroke-dasharray="4 3" opacity=".8" class="sensor-wave w2"/>
+            <!-- Decorative lines on body -->
+            <line x1="200" y1="180" x2="380" y2="180" stroke="#3b82f6" stroke-width="1.5" opacity=".4"/>
+            <line x1="200" y1="195" x2="380" y2="195" stroke="#3b82f6" stroke-width="1" opacity=".2"/>
+            <!-- Defs -->
+            <defs>
+              <linearGradient id="bodyGrad" x1="80" y1="160" x2="420" y2="260" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#1e40af"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+              <linearGradient id="cabinGrad" x1="130" y1="90" x2="350" y2="170" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#1d4ed8"/>
+                <stop offset="100%" stop-color="#2563eb"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <!-- Floating labels -->
+          <div class="float-label ultrasonic" style="top:52%;right:2%">Ultrasonic</div>
+          <div class="float-label sound" style="top:12%;left:30%">Sound Controller</div>
+          <div class="float-label bluetooth" style="top:30%;right:10%">Bluetooth</div>
+          <div class="float-label ir" style="bottom:10%;left:30%">Line Follower</div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12l-6 6z" fill="currentColor"/></svg>
+    </a>
+  </section>
+
+  <!-- ─────────────────────────── ABOUT ─────────────────────────── -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">About the Project</span>
+        <h2>What is <span class="gradient-text">Car Robot</span>?</h2>
+        <p class="section-sub">A capstone hardware project by Computer Engineering students at Lebanese French University</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card en-card" data-animate>
+          <h3>About Our Project</h3>
+          <p>
+            As five Computer Engineering students at the Lebanese French University, we designed and built
+            <strong>Car Robot</strong> — a fully autonomous smart car robot that integrates multiple intelligent systems
+            to navigate, respond to environment input, and be controlled remotely.
+          </p>
+          <p>
+            The car uses an <strong>Arduino Uno</strong> microcontroller as its brain, combined with ultrasonic,
+            infrared, and sound sensors, a Bluetooth module, a sound sensor module, and a servo-driven steering mechanism.
+          </p>
+          <p>
+            This project was completed under the supervision of <strong>Ms. Rawshan Nuree Othman</strong>, to whom we
+            extend our deepest gratitude for her guidance and continuous support.
+          </p>
+        </div>
+      </div>
+      <div class="tech-stack" data-animate>
+        <div class="tech-item"><span>Arduino Uno</span></div>
+        <div class="tech-item"><span>IR Sensors</span></div>
+        <div class="tech-item"><span>Sound Module</span></div>
+        <div class="tech-item"><span>L298N Driver</span></div>
+        <div class="tech-item"><span>Servo Motor</span></div>
+        <div class="tech-item"><span>Sound Controller</span></div>
+        <div class="tech-item"><span>DC Motors</span></div>
+        <div class="tech-item"><span>Li-Po Battery</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── FEATURES ─────────────────────────── -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Robot Features</span>
+        <h2>Our <span class="gradient-text">Robot Features</span></h2>
+        <p class="section-sub">Five intelligent modules working together inside one smart vehicle</p>
+      </div>
+
+      <!-- Feature tabs -->
+      <div class="feat-tabs" data-animate>
+        <button class="feat-tab active" data-tab="0">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+          Obstacle Avoidance
+        </button>
+        <button class="feat-tab" data-tab="1">
+          <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" fill="currentColor"/></svg>
+          Bluetooth Control
+        </button>
+        <button class="feat-tab" data-tab="2">
+          <svg viewBox="0 0 24 24"><path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z" fill="currentColor"/></svg>
+          Line Following
+        </button>
+        <button class="feat-tab" data-tab="3">
+          <svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm5 9a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2z" fill="currentColor"/></svg>
+          Sound Controller
+        </button>
+        <button class="feat-tab" data-tab="4">
+          <svg viewBox="0 0 24 24"><path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.41 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" fill="currentColor"/></svg>
+          Voice Control
+        </button>
+      </div>
+
+      <!-- Feature panels -->
+      <div class="feat-panels">
+
+        <!-- PANEL 0: Obstacle Avoidance -->
+        <div class="feat-panel active" data-panel="0">
+          <div class="feat-panel-inner">
+            <div class="feat-info">
+              <span class="feat-num">01</span>
+              <h3>Obstacle Avoidance</h3>
+              <p>The robot uses an <strong>HC-SR04 ultrasonic sensor</strong> mounted on a servo motor to scan the environment 180°. When an obstacle is detected within 20 cm, the car stops, evaluates left and right distances, and chooses the clearest path.</p>
+              <ul class="feat-list">
+                <li>HC-SR04 Ultrasonic Sensor</li>
+                <li>SG90 Servo (180° scan)</li>
+                <li>L298N Motor Driver</li>
+                <li>Real-time distance calculation</li>
+              </ul>
+              <div class="feat-diagram">
+                <div class="diagram-box">
+                  <div class="diagram-node node-blue">Arduino Uno</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-cyan">L298N Driver</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-green">DC Motors</div>
+                  <div class="diagram-feedback">
+                    <div class="diagram-node node-orange">HC-SR04</div>
+                    <div class="diagram-arrow">→</div>
+                    <div class="diagram-node node-blue">Arduino</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-code-wrapper">
+              <div class="code-header">
+                <span class="code-lang">Arduino C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">
+                  <svg viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1h-1V6a2 2 0 00-2-2H8V3z"/><path d="M4 6a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="code-block"><code><span class="c-include">#include</span> <span class="c-string">&lt;Servo.h&gt;</span>
+<span class="c-include">#include</span> <span class="c-string">&lt;NewPing.h&gt;</span>
+
+<span class="c-define">#define</span> TRIG_PIN   <span class="c-num">12</span>
+<span class="c-define">#define</span> ECHO_PIN   <span class="c-num">11</span>
+<span class="c-define">#define</span> MAX_DIST   <span class="c-num">200</span>
+<span class="c-define">#define</span> SAFE_DIST  <span class="c-num">20</span>
+
+NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DIST);
+Servo scanServo;
+
+<span class="c-type">int</span> m1 = <span class="c-num">2</span>, m2 = <span class="c-num">3</span>, m3 = <span class="c-num">4</span>, m4 = <span class="c-num">5</span>;
+<span class="c-type">int</span> enA = <span class="c-num">9</span>, enB = <span class="c-num">10</span>;
+
+<span class="c-type">void</span> <span class="c-fn">setup</span>() {
+  scanServo.<span class="c-fn">attach</span>(<span class="c-num">6</span>);
+  <span class="c-kw">for</span> (<span class="c-type">int</span> p : {m1,m2,m3,m4,enA,enB})
+    <span class="c-fn">pinMode</span>(p, OUTPUT);
+  <span class="c-fn">analogWrite</span>(enA, <span class="c-num">180</span>);
+  <span class="c-fn">analogWrite</span>(enB, <span class="c-num">180</span>);
+}
+
+<span class="c-type">void</span> <span class="c-fn">loop</span>() {
+  <span class="c-type">int</span> dist = sonar.<span class="c-fn">ping_cm</span>();
+  <span class="c-kw">if</span> (dist &gt; <span class="c-num">0</span> &amp;&amp; dist &lt; SAFE_DIST) {
+    <span class="c-fn">stopCar</span>();
+    <span class="c-fn">delay</span>(<span class="c-num">300</span>);
+    <span class="c-type">int</span> leftD  = <span class="c-fn">scanDir</span>(<span class="c-num">150</span>);
+    <span class="c-type">int</span> rightD = <span class="c-fn">scanDir</span>(<span class="c-num">30</span>);
+    (leftD &gt; rightD) ? <span class="c-fn">turnLeft</span>() : <span class="c-fn">turnRight</span>();
+    <span class="c-fn">delay</span>(<span class="c-num">500</span>);
+  } <span class="c-kw">else</span> {
+    <span class="c-fn">moveForward</span>();
+  }
+}
+
+<span class="c-type">int</span> <span class="c-fn">scanDir</span>(<span class="c-type">int</span> angle) {
+  scanServo.<span class="c-fn">write</span>(angle);
+  <span class="c-fn">delay</span>(<span class="c-num">300</span>);
+  <span class="c-kw">return</span> sonar.<span class="c-fn">ping_cm</span>();
+}
+
+<span class="c-type">void</span> <span class="c-fn">moveForward</span>()  { <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">turnLeft</span>()     { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,HIGH);<span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">turnRight</span>()    { <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">stopCar</span>()      { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,LOW); }
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 1: Bluetooth -->
+        <div class="feat-panel" data-panel="1">
+          <div class="feat-panel-inner">
+            <div class="feat-info">
+              <span class="feat-num">02</span>
+              <h3>Bluetooth Control</h3>
+              <p>An <strong>HC-05 Bluetooth module</strong> allows wireless control via a smartphone app. Commands (Forward, Backward, Left, Right, Stop, Speed Up/Down) are sent as single characters over serial and processed in real time.</p>
+              <ul class="feat-list">
+                <li>HC-05 Bluetooth Module (9600 baud)</li>
+                <li>Android Controller App</li>
+                <li>PWM Speed Control</li>
+                <li>Up to 10 m range</li>
+              </ul>
+              <div class="feat-diagram">
+                <div class="diagram-box">
+                  <div class="diagram-node node-blue">Smartphone App</div>
+                  <div class="diagram-arrow">📶</div>
+                  <div class="diagram-node node-cyan">HC-05 BT</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-blue">Arduino</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-green">Motors</div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-code-wrapper">
+              <div class="code-header">
+                <span class="code-lang">Arduino C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">
+                  <svg viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1h-1V6a2 2 0 00-2-2H8V3z"/><path d="M4 6a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="code-block"><code><span class="c-include">#include</span> <span class="c-string">&lt;SoftwareSerial.h&gt;</span>
+
+SoftwareSerial BT(<span class="c-num">10</span>, <span class="c-num">11</span>); <span class="c-comment">// RX=10, TX=11</span>
+
+<span class="c-type">int</span> m1=<span class="c-num">2</span>,m2=<span class="c-num">3</span>,m3=<span class="c-num">4</span>,m4=<span class="c-num">5</span>,enA=<span class="c-num">9</span>,enB=<span class="c-num">10</span>;
+<span class="c-type">int</span> spd = <span class="c-num">180</span>;
+
+<span class="c-type">void</span> <span class="c-fn">setup</span>() {
+  BT.<span class="c-fn">begin</span>(<span class="c-num">9600</span>);
+  <span class="c-kw">for</span> (<span class="c-type">int</span> p : {m1,m2,m3,m4,enA,enB})
+    <span class="c-fn">pinMode</span>(p, OUTPUT);
+  <span class="c-fn">analogWrite</span>(enA, spd);
+  <span class="c-fn">analogWrite</span>(enB, spd);
+}
+
+<span class="c-type">void</span> <span class="c-fn">loop</span>() {
+  <span class="c-kw">if</span> (BT.<span class="c-fn">available</span>()) {
+    <span class="c-type">char</span> cmd = (<span class="c-type">char</span>)BT.<span class="c-fn">read</span>();
+    <span class="c-kw">switch</span> (cmd) {
+      <span class="c-kw">case</span> <span class="c-string">'F'</span>: <span class="c-fn">forward</span>();  <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'B'</span>: <span class="c-fn">backward</span>(); <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'L'</span>: <span class="c-fn">left</span>();     <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'R'</span>: <span class="c-fn">right</span>();    <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'S'</span>: <span class="c-fn">stopCar</span>();  <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'+'</span>: spd = <span class="c-fn">min</span>(spd+<span class="c-num">20</span>, <span class="c-num">255</span>);
+               <span class="c-fn">analogWrite</span>(enA, spd);
+               <span class="c-fn">analogWrite</span>(enB, spd); <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> <span class="c-string">'-'</span>: spd = <span class="c-fn">max</span>(spd-<span class="c-num">20</span>, <span class="c-num">80</span>);
+               <span class="c-fn">analogWrite</span>(enA, spd);
+               <span class="c-fn">analogWrite</span>(enB, spd); <span class="c-kw">break</span>;
+    }
+  }
+}
+
+<span class="c-type">void</span> <span class="c-fn">forward</span>()  { <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">backward</span>() { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,HIGH);<span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">left</span>()     { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,HIGH);<span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">right</span>()    { <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">stopCar</span>()  { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,LOW); }
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: Line Following -->
+        <div class="feat-panel" data-panel="2">
+          <div class="feat-panel-inner">
+            <div class="feat-info">
+              <span class="feat-num">03</span>
+              <h3>Line Following</h3>
+              <p>Two <strong>IR sensors</strong> positioned at the front-bottom of the car detect a black line on a white surface. The car adjusts its direction in real time — following curves, corners, and straight paths autonomously.</p>
+              <ul class="feat-list">
+                <li>2× IR Reflective Sensors (digital)</li>
+                <li>PID-like correction logic</li>
+                <li>Handles sharp corners</li>
+                <li>Speed adjustment on turns</li>
+              </ul>
+              <div class="feat-diagram">
+                <div class="diagram-box">
+                  <div class="diagram-node node-orange">Left IR</div>
+                  <div class="diagram-arrow">↘</div>
+                  <div class="diagram-node node-blue">Arduino</div>
+                  <div class="diagram-arrow">↗</div>
+                  <div class="diagram-node node-orange">Right IR</div>
+                  <div class="diagram-feedback">
+                    <div class="diagram-node node-blue">Arduino</div>
+                    <div class="diagram-arrow">→</div>
+                    <div class="diagram-node node-green">Motors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-code-wrapper">
+              <div class="code-header">
+                <span class="code-lang">Arduino C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">
+                  <svg viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1h-1V6a2 2 0 00-2-2H8V3z"/><path d="M4 6a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="code-block"><code><span class="c-define">#define</span> IR_LEFT   <span class="c-num">7</span>
+<span class="c-define">#define</span> IR_RIGHT  <span class="c-num">8</span>
+<span class="c-define">#define</span> M1  <span class="c-num">2</span>
+<span class="c-define">#define</span> M2  <span class="c-num">3</span>
+<span class="c-define">#define</span> M3  <span class="c-num">4</span>
+<span class="c-define">#define</span> M4  <span class="c-num">5</span>
+<span class="c-define">#define</span> ENA <span class="c-num">9</span>
+<span class="c-define">#define</span> ENB <span class="c-num">10</span>
+
+<span class="c-define">#define</span> BASE_SPD  <span class="c-num">160</span>
+<span class="c-define">#define</span> TURN_SPD  <span class="c-num">220</span>
+
+<span class="c-type">void</span> <span class="c-fn">setup</span>() {
+  <span class="c-fn">pinMode</span>(IR_LEFT,  INPUT);
+  <span class="c-fn">pinMode</span>(IR_RIGHT, INPUT);
+  <span class="c-kw">for</span> (<span class="c-type">int</span> p : {M1,M2,M3,M4,ENA,ENB})
+    <span class="c-fn">pinMode</span>(p, OUTPUT);
+}
+
+<span class="c-type">void</span> <span class="c-fn">loop</span>() {
+  <span class="c-type">bool</span> L = <span class="c-fn">digitalRead</span>(IR_LEFT);  <span class="c-comment">// LOW = on line</span>
+  <span class="c-type">bool</span> R = <span class="c-fn">digitalRead</span>(IR_RIGHT);
+
+  <span class="c-kw">if</span> (!L &amp;&amp; !R) {          <span class="c-comment">// both on line → forward</span>
+    <span class="c-fn">analogWrite</span>(ENA, BASE_SPD);
+    <span class="c-fn">analogWrite</span>(ENB, BASE_SPD);
+    <span class="c-fn">forward</span>();
+  } <span class="c-kw">else if</span> (L &amp;&amp; !R) {    <span class="c-comment">// left off → turn left</span>
+    <span class="c-fn">analogWrite</span>(ENA, TURN_SPD);
+    <span class="c-fn">analogWrite</span>(ENB, BASE_SPD/<span class="c-num">2</span>);
+    <span class="c-fn">turnLeft</span>();
+  } <span class="c-kw">else if</span> (!L &amp;&amp; R) {   <span class="c-comment">// right off → turn right</span>
+    <span class="c-fn">analogWrite</span>(ENA, BASE_SPD/<span class="c-num">2</span>);
+    <span class="c-fn">analogWrite</span>(ENB, TURN_SPD);
+    <span class="c-fn">turnRight</span>();
+  } <span class="c-kw">else</span> {               <span class="c-comment">// both off → stop</span>
+    <span class="c-fn">stopCar</span>();
+  }
+}
+
+<span class="c-type">void</span> <span class="c-fn">forward</span>()  { <span class="c-fn">digitalWrite</span>(M1,HIGH);<span class="c-fn">digitalWrite</span>(M2,LOW); <span class="c-fn">digitalWrite</span>(M3,HIGH);<span class="c-fn">digitalWrite</span>(M4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">turnLeft</span>()  { <span class="c-fn">digitalWrite</span>(M1,LOW); <span class="c-fn">digitalWrite</span>(M2,HIGH);<span class="c-fn">digitalWrite</span>(M3,HIGH);<span class="c-fn">digitalWrite</span>(M4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">turnRight</span>() { <span class="c-fn">digitalWrite</span>(M1,HIGH);<span class="c-fn">digitalWrite</span>(M2,LOW); <span class="c-fn">digitalWrite</span>(M3,LOW); <span class="c-fn">digitalWrite</span>(M4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">stopCar</span>()   { <span class="c-fn">digitalWrite</span>(M1,LOW); <span class="c-fn">digitalWrite</span>(M2,LOW); <span class="c-fn">digitalWrite</span>(M3,LOW); <span class="c-fn">digitalWrite</span>(M4,LOW); }
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 3: Sound Controller -->
+        <div class="feat-panel" data-panel="3">
+          <div class="feat-panel-inner">
+            <div class="feat-info">
+              <span class="feat-num">04</span>
+              <h3>Sound Controller</h3>
+              <p>A <strong>KY-038 sound sensor</strong> detects acoustic signals such as claps or loud sounds. A double-clap pattern toggles the motors on/off in real time, allowing hands-free control without any wireless hardware.</p>
+              <ul class="feat-list">
+                <li>KY-038 Sound Sensor (analog + digital)</li>
+                <li>Double-clap toggle logic</li>
+                <li>Debounce &amp; timing window (600 ms)</li>
+                <li>LED status indicator</li>
+              </ul>
+              <div class="feat-diagram">
+                <div class="diagram-box">
+                  <div class="diagram-node node-orange">KY-038 Mic</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-blue">Arduino</div>
+                  <div class="diagram-feedback">
+                    <div class="diagram-node node-blue">Arduino</div>
+                    <div class="diagram-arrow">→</div>
+                    <div class="diagram-node node-green">Motors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-code-wrapper">
+              <div class="code-header">
+                <span class="code-lang">Arduino C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">
+                  <svg viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1h-1V6a2 2 0 00-2-2H8V3z"/><path d="M4 6a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="code-block"><code><span class="c-define">#define</span> SOUND_DIG  <span class="c-num">7</span>   <span class="c-comment">// digital threshold pin</span>
+<span class="c-define">#define</span> SOUND_ANA  A0  <span class="c-comment">// analog level pin</span>
+<span class="c-define">#define</span> LED_PIN    <span class="c-num">13</span>
+<span class="c-define">#define</span> M1  <span class="c-num">2</span>
+<span class="c-define">#define</span> M2  <span class="c-num">3</span>
+<span class="c-define">#define</span> M3  <span class="c-num">4</span>
+<span class="c-define">#define</span> M4  <span class="c-num">5</span>
+<span class="c-define">#define</span> ENA <span class="c-num">9</span>
+<span class="c-define">#define</span> ENB <span class="c-num">10</span>
+
+<span class="c-type">bool</span> motorState = <span class="c-kw">false</span>;
+<span class="c-type">int</span>  clapCount  = <span class="c-num">0</span>;
+<span class="c-type">unsigned long</span> lastClap = <span class="c-num">0</span>;
+
+<span class="c-type">void</span> <span class="c-fn">setup</span>() {
+  Serial.<span class="c-fn">begin</span>(<span class="c-num">9600</span>);
+  <span class="c-fn">pinMode</span>(SOUND_DIG, INPUT);
+  <span class="c-fn">pinMode</span>(LED_PIN,   OUTPUT);
+  <span class="c-kw">for</span> (<span class="c-type">int</span> p : {M1,M2,M3,M4,ENA,ENB})
+    <span class="c-fn">pinMode</span>(p, OUTPUT);
+  <span class="c-fn">analogWrite</span>(ENA, <span class="c-num">180</span>);
+  <span class="c-fn">analogWrite</span>(ENB, <span class="c-num">180</span>);
+}
+
+<span class="c-type">void</span> <span class="c-fn">loop</span>() {
+  <span class="c-kw">if</span> (<span class="c-fn">digitalRead</span>(SOUND_DIG) == LOW) {  <span class="c-comment">// sound detected</span>
+    <span class="c-type">unsigned long</span> now = <span class="c-fn">millis</span>();
+    <span class="c-kw">if</span> (now - lastClap &lt; <span class="c-num">600</span>) {         <span class="c-comment">// double-clap window</span>
+      clapCount++;
+    } <span class="c-kw">else</span> {
+      clapCount = <span class="c-num">1</span>;
+    }
+    lastClap = now;
+    <span class="c-fn">delay</span>(<span class="c-num">80</span>);                           <span class="c-comment">// debounce</span>
+
+    <span class="c-kw">if</span> (clapCount &gt;= <span class="c-num">2</span>) {
+      clapCount  = <span class="c-num">0</span>;
+      motorState = !motorState;            <span class="c-comment">// toggle motors</span>
+      motorState ? <span class="c-fn">moveForward</span>() : <span class="c-fn">stopCar</span>();
+      <span class="c-fn">digitalWrite</span>(LED_PIN, motorState);
+    }
+  }
+  Serial.<span class="c-fn">println</span>(<span class="c-fn">analogRead</span>(SOUND_ANA));  <span class="c-comment">// monitor level</span>
+}
+
+<span class="c-type">void</span> <span class="c-fn">moveForward</span>() {
+  <span class="c-fn">digitalWrite</span>(M1,HIGH); <span class="c-fn">digitalWrite</span>(M2,LOW);
+  <span class="c-fn">digitalWrite</span>(M3,HIGH); <span class="c-fn">digitalWrite</span>(M4,LOW);
+}
+<span class="c-type">void</span> <span class="c-fn">stopCar</span>() {
+  <span class="c-fn">digitalWrite</span>(M1,LOW); <span class="c-fn">digitalWrite</span>(M2,LOW);
+  <span class="c-fn">digitalWrite</span>(M3,LOW); <span class="c-fn">digitalWrite</span>(M4,LOW);
+}
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 4: Voice Control -->
+        <div class="feat-panel" data-panel="4">
+          <div class="feat-panel-inner">
+            <div class="feat-info">
+              <span class="feat-num">05</span>
+              <h3>Voice Control</h3>
+              <p>A <strong>DFRobot Voice Recognition</strong> module listens for pre-trained voice commands in real time. Saying "Forward", "Stop", "Left", or "Right" drives the car hands-free — no phone or computer needed.</p>
+              <ul class="feat-list">
+                <li>DFRobot Voice Recognition V3</li>
+                <li>5 customizable voice commands</li>
+                <li>UART communication (9600 baud)</li>
+                <li>Speaker-independent recognition</li>
+              </ul>
+              <div class="feat-diagram">
+                <div class="diagram-box">
+                  <div class="diagram-node node-orange">Microphone 🎙️</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-cyan">Voice Module</div>
+                  <div class="diagram-arrow">→ UART</div>
+                  <div class="diagram-node node-blue">Arduino</div>
+                  <div class="diagram-arrow">→</div>
+                  <div class="diagram-node node-green">Motors</div>
+                </div>
+              </div>
+            </div>
+            <div class="feat-code-wrapper">
+              <div class="code-header">
+                <span class="code-lang">Arduino C++</span>
+                <button class="copy-btn" onclick="copyCode(this)">
+                  <svg viewBox="0 0 20 20"><path d="M8 3a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1h-1V6a2 2 0 00-2-2H8V3z"/><path d="M4 6a2 2 0 012-2h6a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" fill="currentColor"/></svg>
+                  Copy
+                </button>
+              </div>
+              <pre class="code-block"><code><span class="c-include">#include</span> <span class="c-string">&lt;SoftwareSerial.h&gt;</span>
+
+SoftwareSerial voice(<span class="c-num">10</span>, <span class="c-num">11</span>); <span class="c-comment">// RX=10, TX=11</span>
+
+<span class="c-comment">// Command byte codes (trained in DFRobot app)</span>
+<span class="c-define">#define</span> CMD_FORWARD  <span class="c-num">0x11</span>
+<span class="c-define">#define</span> CMD_BACKWARD <span class="c-num">0x12</span>
+<span class="c-define">#define</span> CMD_LEFT     <span class="c-num">0x13</span>
+<span class="c-define">#define</span> CMD_RIGHT    <span class="c-num">0x14</span>
+<span class="c-define">#define</span> CMD_STOP     <span class="c-num">0x15</span>
+
+<span class="c-type">int</span> m1=<span class="c-num">2</span>,m2=<span class="c-num">3</span>,m3=<span class="c-num">4</span>,m4=<span class="c-num">5</span>;
+
+<span class="c-type">void</span> <span class="c-fn">setup</span>() {
+  voice.<span class="c-fn">begin</span>(<span class="c-num">9600</span>);
+  <span class="c-kw">for</span> (<span class="c-type">int</span> p : {m1,m2,m3,m4})
+    <span class="c-fn">pinMode</span>(p, OUTPUT);
+  <span class="c-fn">addCommand</span>(CMD_FORWARD,  <span class="c-string">"forward"</span>);
+  <span class="c-fn">addCommand</span>(CMD_BACKWARD, <span class="c-string">"backward"</span>);
+  <span class="c-fn">addCommand</span>(CMD_LEFT,     <span class="c-string">"turn left"</span>);
+  <span class="c-fn">addCommand</span>(CMD_RIGHT,    <span class="c-string">"turn right"</span>);
+  <span class="c-fn">addCommand</span>(CMD_STOP,     <span class="c-string">"stop"</span>);
+}
+
+<span class="c-type">void</span> <span class="c-fn">loop</span>() {
+  <span class="c-kw">if</span> (voice.<span class="c-fn">available</span>()) {
+    <span class="c-type">byte</span> cmd = voice.<span class="c-fn">read</span>();
+    <span class="c-kw">switch</span>(cmd) {
+      <span class="c-kw">case</span> CMD_FORWARD:  <span class="c-fn">forward</span>();  <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> CMD_BACKWARD: <span class="c-fn">backward</span>(); <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> CMD_LEFT:     <span class="c-fn">turnLeft</span>(); <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> CMD_RIGHT:    <span class="c-fn">turnRight</span>(); <span class="c-kw">break</span>;
+      <span class="c-kw">case</span> CMD_STOP:     <span class="c-fn">stopCar</span>();  <span class="c-kw">break</span>;
+    }
+  }
+}
+
+<span class="c-type">void</span> <span class="c-fn">addCommand</span>(<span class="c-type">byte</span> id, String label) {
+  <span class="c-comment">// DFRobot training protocol</span>
+  voice.<span class="c-fn">write</span>(0xAA); voice.<span class="c-fn">write</span>(id);
+  <span class="c-fn">delay</span>(<span class="c-num">100</span>);
+}
+
+<span class="c-type">void</span> <span class="c-fn">forward</span>()  { <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">backward</span>() { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,HIGH);<span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">turnLeft</span>() { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,HIGH);<span class="c-fn">digitalWrite</span>(m3,HIGH);<span class="c-fn">digitalWrite</span>(m4,LOW); }
+<span class="c-type">void</span> <span class="c-fn">turnRight</span>(){ <span class="c-fn">digitalWrite</span>(m1,HIGH);<span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,HIGH); }
+<span class="c-type">void</span> <span class="c-fn">stopCar</span>()  { <span class="c-fn">digitalWrite</span>(m1,LOW); <span class="c-fn">digitalWrite</span>(m2,LOW); <span class="c-fn">digitalWrite</span>(m3,LOW); <span class="c-fn">digitalWrite</span>(m4,LOW); }
+</code></pre>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end feat-panels -->
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── GALLERY ─────────────────────────── -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Project Work</span>
+        <h2>Our <span class="gradient-text">Project Gallery</span></h2>
+        <p class="section-sub">Photos from the build process, testing, and final demonstration</p>
+      </div>
+      <div class="gallery-grid" data-animate>
+        <div class="gallery-item gi-large">
+          <div class="gallery-placeholder gp-1">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/><text x="40" y="65" text-anchor="middle" font-size="8" fill="var(--text-secondary)">Add Photo</text></svg>
+          </div>
+          <div class="gallery-overlay"><span>Assembly</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-2">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Circuit</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-3">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Sensors</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-4">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Testing</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-5">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Demo</span></div>
+        </div>
+        <div class="gallery-item gi-large">
+          <div class="gallery-placeholder gp-6">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/><text x="40" y="65" text-anchor="middle" font-size="8" fill="var(--text-secondary)">Add Photo</text></svg>
+          </div>
+          <div class="gallery-overlay"><span>Final Build</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-1">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Wiring</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-2">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Presentation</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder gp-3">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="var(--primary)" stroke-width="2"/><path d="M25 40h30M40 25v30" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="gallery-overlay"><span>Team Work</span></div>
+        </div>
+      </div>
+      <p class="gallery-note">📸 Replace placeholders with your actual project photos</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── 3D MODEL ─────────────────────────── -->
+  <section class="section model3d-section" id="model3d">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Interactive</span>
+        <h2>3D Robot <span class="gradient-text">Model</span></h2>
+        <p class="section-sub">Drag to rotate &middot; Scroll to zoom &middot; Pinch on mobile</p>
+      </div>
+      <div class="model3d-grid" data-animate>
+
+        <div class="model3d-card mc-large" data-src="./car.glb" data-label="Full Assembly">
+          <model-viewer src="./car.glb" ios-src="./car.usdz" alt="Full Robot" auto-rotate auto-rotate-delay="600" rotation-per-second="18deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
+          <div class="model3d-label"><span>Full Assembly</span></div>
+          <div class="model3d-expand">&#x26F6; Expand</div>
+        </div>
+
+        <div class="model3d-card" data-src="./frame.glb" data-label="Chassis">
+          <model-viewer src="./frame.glb" alt="Chassis" auto-rotate auto-rotate-delay="800" rotation-per-second="22deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
+          <div class="model3d-label"><span>Chassis</span></div>
+          <div class="model3d-expand">&#x26F6; Expand</div>
+        </div>
+
+        <div class="model3d-card" data-src="./frame.glb" data-label="Sensor Module">
+          <model-viewer src="./frame.glb" alt="Sensor Module" auto-rotate auto-rotate-delay="1000" rotation-per-second="20deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
+          <div class="model3d-label"><span>Sensor Module</span></div>
+          <div class="model3d-expand">&#x26F6; Expand</div>
+        </div>
+
+        <div class="model3d-card" data-src="./frame.glb" data-label="Motor Unit">
+          <model-viewer src="./frame.glb" alt="Motor Unit" auto-rotate auto-rotate-delay="700" rotation-per-second="24deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
+          <div class="model3d-label"><span>Motor Unit</span></div>
+          <div class="model3d-expand">&#x26F6; Expand</div>
+        </div>
+
+        <div class="model3d-card mc-large" data-src="./frame.glb" data-label="Circuit Board">
+          <model-viewer src="./frame.glb" alt="Circuit Board" auto-rotate auto-rotate-delay="900" rotation-per-second="16deg" camera-controls touch-action="pan-y" shadow-intensity="1.5" environment-image="legacy" exposure="1"></model-viewer>
+          <div class="model3d-label"><span>Circuit Board</span></div>
+          <div class="model3d-expand">&#x26F6; Expand</div>
+        </div>
+
+      </div>
+      <p class="gallery-note">&#x1F4E6; Place your <code>.glb</code> files next to index.html named robot.glb, robot2.glb, robot3.glb…</p>
+    </div>
+  </section>
+
+  <!-- model-viewer (supports USDZ, GLB, GLTF) -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+  <!-- 3D Model Modal -->
+  <div class="mv-modal" id="mvModal">
+    <div class="mv-modal-backdrop" id="mvBackdrop"></div>
+    <div class="mv-modal-box">
+      <div class="mv-modal-header">
+        <span class="mv-modal-title" id="mvModalTitle">Model</span>
+        <button class="mv-modal-close" id="mvClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="mv-modal-viewer">
+        <model-viewer id="mvModalViewer" auto-rotate auto-rotate-delay="500" rotation-per-second="18deg" camera-controls touch-action="none" shadow-intensity="1.5" environment-image="legacy" exposure="1" ar ar-modes="quick-look webxr" style="width:100%;height:100%;"></model-viewer>
+      </div>
+      <div class="mv-modal-hint">&#x1F5B1; Drag to rotate &nbsp;&middot;&nbsp; &#x1F50D; Scroll to zoom</div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var modal    = document.getElementById('mvModal');
+    var backdrop = document.getElementById('mvBackdrop');
+    var closeBtn = document.getElementById('mvClose');
+    var viewer   = document.getElementById('mvModalViewer');
+    var title    = document.getElementById('mvModalTitle');
+
+    function openModal(src, label) {
+      viewer.setAttribute('src', src);
+      viewer.setAttribute('alt', label);
+      title.textContent = label;
+      modal.classList.add('mv-modal--open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('mv-modal--open');
+      document.body.style.overflow = '';
+      setTimeout(function(){ viewer.setAttribute('src', ''); }, 400);
+    }
+
+    document.querySelectorAll('.model3d-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        // Don't trigger if user is dragging the mini viewer
+        if (e.target.closest('model-viewer')) return;
+        var src   = card.getAttribute('data-src');
+        var label = card.getAttribute('data-label') || '3D Model';
+        openModal(src, label);
+      });
+    });
+
+    backdrop.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+  })();
+  </script>
+  <section class="section team-section" id="team">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <span class="section-tag">Project Team</span>
+        <h2>Meet the <span class="gradient-text">Engineers</span></h2>
+        <p class="section-sub">Computer Engineering students at Lebanese French University (LFU)</p>
+      </div>
+
+      <!-- Supervisor -->
+      <div class="supervisor-card" data-animate>
+        <div class="supervisor-inner">
+          <div class="sup-avatar">
+            <span>RN</span>
+            <div class="sup-badge">Supervisor</div>
+          </div>
+          <div class="sup-info">
+            <div class="sup-role">Project Supervisor</div>
+            <h3>Ms. Rawshan Nuree Othman</h3>
+            <p>
+              This project was completed under Ms. Rawshan Nuree Othman's supervision. We are
+              deeply grateful for her invaluable guidance, technical insight, and
+              continuous support during the development of Car Robot. We also thank
+              the NICER Club for providing us with space and resources to build and test our work.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Team members -->
+      <div class="team-grid" data-animate>
+        <div class="team-card" data-animate>
+          <div class="team-avatar" style="--av-color:#1e40af"><span>AK</span></div>
+          <div class="team-badge">Team Member</div>
+          <h4>Ahmed Kareem</h4>
+          <p class="team-role">Hardware Design &amp; Arduino</p>
+          <a class="team-email" href="#">ahmed@email.com</a>
+        </div>
+        <div class="team-card" data-animate>
+          <div class="team-avatar" style="--av-color:#0369a1"><span>SR</span></div>
+          <div class="team-badge">Team Member</div>
+          <h4>Sara Rashid</h4>
+          <p class="team-role">Sensor Integration &amp; Testing</p>
+          <a class="team-email" href="#">sara@email.com</a>
+        </div>
+        <div class="team-card" data-animate>
+          <div class="team-avatar" style="--av-color:#047857"><span>DH</span></div>
+          <div class="team-badge">Team Member</div>
+          <h4>Diyar Hasan</h4>
+          <p class="team-role">Bluetooth &amp; Camera Module</p>
+          <a class="team-email" href="#">diyar@email.com</a>
+        </div>
+        <div class="team-card" data-animate>
+          <div class="team-avatar" style="--av-color:#7c3aed"><span>NF</span></div>
+          <div class="team-badge">Team Member</div>
+          <h4>Narin Fuad</h4>
+          <p class="team-role">Programming &amp; Documentation</p>
+          <a class="team-email" href="#">narin@email.com</a>
+        </div>
+        <div class="team-card" data-animate>
+          <div class="team-avatar" style="--av-color:#be123c"><span>OM</span></div>
+          <div class="team-badge">Team Member</div>
+          <h4>Omar Mohammed</h4>
+          <p class="team-role">PCB Layout &amp; Assembly</p>
+          <a class="team-email" href="#">omar@email.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="nav-logo" href="#">
+            <span class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none"><rect x="4" y="14" width="28" height="14" rx="4" fill="#3b82f6"/><rect x="10" y="8" width="16" height="8" rx="2" fill="#60a5fa"/><circle cx="10" cy="29" r="4" fill="#1e293b"/><circle cx="26" cy="29" r="4" fill="#1e293b"/><circle cx="10" cy="29" r="2" fill="#94a3b8"/><circle cx="26" cy="29" r="2" fill="#94a3b8"/></svg>
+            </span>
+            Car Robot
+          </a>
+          <p>Smart Autonomous Car Robot — a capstone project by Computer Engineering students at Lebanese French University.</p>
+        </div>
+        <div class="footer-links">
+          <strong>Navigate</strong>
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#team">Team</a>
+          <a href="#model3d">3D Model</a>
+        </div>
+        <div class="footer-links">
+          <strong>Features</strong>
+          <a href="#features">Obstacle Avoidance</a>
+          <a href="#features">Bluetooth Control</a>
+          <a href="#features">Line Following</a>
+          <a href="#features">Sound Controller</a>
+          <a href="#features">Voice Control</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Car Robot — Lebanese French University &nbsp;·&nbsp; Computer Engineering Department</p>
+        <p>Supervised by Ms. Rawshan Nuree Othman</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 8l-6 6h12l-6-6z" fill="currentColor"/></svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
